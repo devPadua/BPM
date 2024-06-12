@@ -14,18 +14,19 @@ document.addEventListener('keydown', function(){
 
 function clique(){
     cliques--
+    let palavraBatimentos = cliques == 1 ? 'batimento' : 'batimentos'
     batidas.push(Date.now())
     if (batidas.length < 5){
-        bpm = `Aguardando dados, meça mais ${cliques} batimentos`
+        bpm = `Aguardando dados, meça mais ${cliques} ${palavraBatimentos}.`
     } else if (batidas.length >= 5 && batidas.length < 10){
         ultimaBatida = batidas[batidas.length-1]
         quintaBatida = batidas[batidas.length-4]
-        bpm = parseInt(60/((ultimaBatida - quintaBatida)/1000)*3)
+        bpm = `BPM: ${parseInt(60/((ultimaBatida - quintaBatida)/1000)*3)}`
     }
     resultado(bpm)
 }
 
 function resultado(bpm){
     let bpmHTML = document.getElementById('bpm')
-    bpmHTML.innerHTML = `BPM: ${bpm}`
+    bpmHTML.innerHTML = `${bpm}`
 }
