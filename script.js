@@ -18,7 +18,7 @@ function clique(){
     batidas.push(Date.now())
     if (batidas.length < 5){
         bpm = `Aguardando dados, meça mais ${cliques} ${palavraBatimentos}.`
-    } else if (batidas.length >= 5 && batidas.length < 10){
+    } else {
         ultimaBatida = batidas[batidas.length-1]
         quintaBatida = batidas[batidas.length-4]
         bpm = `BPM: ${parseInt(60/((ultimaBatida - quintaBatida)/1000)*3)}`
