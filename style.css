@@ -1,3 +1,12 @@
 body {
-    font: normal 12pt helvetica
+    font: bold 12pt helvetica;
+    color: #c7f9cc;
+    background-color: #57cc99;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.5vh;
+    text-shadow: 2px 2px 5px #38A3A5;
 }
